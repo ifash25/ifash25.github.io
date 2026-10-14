@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nayyara Wedding Organizer | Perencana Pernikahan Cirebon & Jawa Barat</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Tailwind Custom Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        roseGold: '#D4AF37', // Elegant Metallic Gold accent
+                        champagne: '#FDFBF7', // Luxury Warm Cream background
+                        roseAccent: '#E8A598', // Soft Rose Gold accent
+                        burgundy: '#581825', // Deep Romantic Burgundy text/accent
+                        sageGreen: '#7A8B7B', // Soft Sage Green detail
+                        darkCharcoal: '#1A1A1A'
+                    },
+                    fontFamily: {
+                        serif: ['Cormorant Garamond', 'serif'],
+                        sans: ['Plus Jakarta Sans', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom Style extensions -->
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #FDFBF7;
+            color: #2D2D2D;
+        }
+        h1, h2, h3, h4, .font-serif {
+            font-family: 'Cormorant Garamond', serif;
+        }
+        .hero-overlay {
+            background: linear-gradient(180deg, rgba(26,26,26,0.6) 0%, rgba(88,24,37,0.7) 100%);
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #D4AF37 0%, #AA771C 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-roseAccent selection:text-white">
+
+    <!-- HEADER / NAVIGATION -->
+    <nav id="navbar" class="fixed top-0 left-0 w-full z-50 transition-all duration-300 py-4 px-4 sm:px-8 bg-white/90 backdrop-blur-md shadow-sm border-b border-roseGold/20">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <!-- Brand Logo -->
+            <a href="#beranda" class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full bg-burgundy flex items-center justify-center text-roseGold border border-roseGold shadow-inner">
+                    <i class="fa-solid font-serif italic text-xl font-bold">N</i>
+                </div>
+                <div>
+                    <span class="block text-xl sm:text-2xl font-serif font-bold tracking-wider text-burgundy">NAYYARA</span>
+                    <span class="block text-[9px] uppercase tracking-[0.25em] text-roseGold font-semibold -mt-1">Wedding Organizer</span>
+                </div>
+            </a>
+
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex items-center space-x-8 font-medium text-sm text-gray-700">
+                <a href="#beranda" class="hover:text-burgundy transition-colors">Beranda</a>
+                <a href="#tentang" class="hover:text-burgundy transition-colors">Tentang Kami</a>
+                <a href="#layanan" class="hover:text-burgundy transition-colors">Paket Wedding</a>
+                <a href="#kalkulator" class="hover:text-burgundy transition-colors">Simulasi Budget</a>
+                <a href="#galeri" class="hover:text-burgundy transition-colors">Galeri</a>
+                <a href="#testimoni" class="hover:text-burgundy transition-colors">Testimoni</a>
+                <a href="#kontak" class="hover:text-burgundy transition-colors">Kontak</a>
+            </div>
+
+            <!-- Header CTA Button -->
+            <div class="hidden md:block">
+                <a href="https://wa.me/628112136333?text=Halo%20Nayyara%20Wedding%20Organizer,%20saya%20ingin%20konsultasi%20mengenai%20perencanaan%20pernikahan." target="_blank" class="bg-burgundy text-white px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-roseGold transition-all shadow-md hover:shadow-lg flex items-center gap-2">
+                    <i class="fa-brands fa-whatsapp text-lg text-green-400"></i>
+                    <span>Konsultasi Gratis</span>
+                </a>
+            </div>
+
+            <!-- Mobile Menu Toggle Button -->
+            <button id="mobile-menu-btn" class="md:hidden text-burgundy text-2xl focus:outline-none">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-champagne border-b border-roseGold/20 px-6 py-6 mt-4 rounded-b-2xl shadow-xl transition-all">
+            <div class="flex flex-col space-y-4 font-medium text-gray-800">
+                <a href="#beranda" class="mobile-link hover:text-burgundy">Beranda</a>
+                <a href="#tentang" class="mobile-link hover:text-burgundy">Tentang Kami</a>
+                <a href="#layanan" class="mobile-link hover:text-burgundy">Paket Wedding</a>
+                <a href="#kalkulator" class="mobile-link hover:text-burgundy">Simulasi Budget</a>
+                <a href="#galeri" class="mobile-link hover:text-burgundy">Galeri Portfolio</a>
+                <a href="#testimoni" class="mobile-link hover:text-burgundy">Testimoni Pelanggan</a>
+                <a href="#kontak" class="mobile-link hover:text-burgundy">Kontak & Lokasi</a>
+                <a href="https://wa.me/628112136333?text=Halo%20Nayyara%20WO,%20saya%20ingin%20konsultasi%20pernikahan" target="_blank" class="bg-burgundy text-white text-center py-3 rounded-full font-semibold flex items-center justify-center gap-2 mt-2">
+                    <i class="fa-brands fa-whatsapp text-xl text-green-400"></i>
+                    Chat WhatsApp (0811-2136-333)
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section id="beranda" class="relative min-h-screen flex items-center justify-center pt-24 pb-16 px-4 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1920&q=80');">
+        <div class="absolute inset-0 hero-overlay"></div>
+        
+        <div class="relative z-10 max-w-4xl text-center text-white px-4">
+            <!-- Badge Google Review -->
+            <div class="inline-flex items-center gap-2 bg-white/20 backdrop-blur-md px-4 py-2 rounded-full border border-white/30 text-xs sm:text-sm font-medium mb-6 animate-pulse">
+                <div class="flex text-yellow-400">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <span>5.0 Rating Tertinggi Google Reviews (Cirebon)</span>
+            </div>
+
+            <h1 class="text-4xl sm:text-6xl md:text-7xl font-serif font-bold leading-tight mb-6">
+                Wujudkan Pernikahan Impian Tanpa Stress Bersama Nayyara WO
+            </h1>
+            
+            <p class="text-lg sm:text-xl text-amber-100/90 font-light max-w-2xl mx-auto mb-8 leading-relaxed">
+                Jasa Perencana & Momen Spesial Pernikahan Profesional Terpercaya di Cirebon dan Seluruh Jawa Barat. Kami Mengabadi Setiap Detik Kebahagiaan Anda.
+            </p>
+
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="https://wa.me/628112136333?text=Halo%20Nayyara%20WO,%20saya%20ingin%20konsultasi%20paket%20pernikahan." target="_blank" class="w-full sm:w-auto bg-roseGold text-burgundy font-bold px-8 py-4 rounded-full hover:bg-white transition-all shadow-xl hover:scale-105 flex items-center justify-center gap-3">
+                    <i class="fa-brands fa-whatsapp text-2xl text-green-600"></i>
+                    <span>Konsultasi WhatsApp Gratis</span>
+                </a>
+                <a href="#layanan" class="w-full sm:w-auto bg-white/10 backdrop-blur-md border border-white/40 text-white font-semibold px-8 py-4 rounded-full hover:bg-white/20 transition-all flex items-center justify-center gap-2">
+                    <span>Lihat Pilihan Paket</span>
+                    <i class="fa-solid fa-arrow-right text-xs"></i>
+                </a>
+            </div>
+
+            <!-- Quick Features Pills -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12 pt-8 border-t border-white/20 text-xs sm:text-sm">
+                <div class="flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-check-circle text-roseGold"></i>
+                    <span>Tim Professional</span>
+                </div>
+                <div class="flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-check-circle text-roseGold"></i>
+                    <span>Fleksibel Budget</span>
+                </div>
+                <div class="flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-check-circle text-roseGold"></i>
+                    <span>Konsep Modern/Tradisional</span>
+                </div>
+                <div class="flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-check-circle text-roseGold"></i>
+                    <span>Pendampingan H-1 & Hari H</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT US SECTION -->
+    <section id="tentang" class="py-20 px-4 sm:px-8 max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <!-- Left Image Collages -->
+            <div class="relative">
+                <div class="relative z-10 rounded-2xl overflow-hidden shadow-2xl border-4 border-white">
+                    <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=800&q=80" alt="Nayyara Wedding Organizer Cirebon" class="w-full h-[400px] object-cover hover:scale-105 transition-transform duration-500">
+                </div>
+                <div class="absolute -bottom-6 -right-6 w-2/3 rounded-2xl overflow-hidden shadow-2xl border-4 border-white hidden sm:block z-20">
+                    <img src="https://images.unsplash.com/photo-1520854221256-17451cc331bf?auto=format&fit=crop&w=600&q=80" alt="Dekorasi Pernikahan Cirebon" class="w-full h-[220px] object-cover">
+                </div>
+                <div class="absolute -top-6 -left-6 w-32 h-32 bg-roseGold/20 rounded-full blur-2xl -z-0"></div>
+            </div>
+
+            <!-- Right Content -->
+            <div>
+                <span class="text-roseGold uppercase tracking-widest font-bold text-sm">Tentang Kami</span>
+                <h2 class="text-3xl sm:text-5xl font-serif font-bold text-burgundy mt-2 mb-6">
+                    Mewujudkan Hari Bahagia Anda dengan Sempurna & Elegan
+                </h2>
+                <p class="text-gray-600 mb-6 leading-relaxed">
+                    <strong>Nayyara Wedding Organizer</strong> adalah perencana pernikahan profesional terkemuka yang berpusat di Kedawung, Cirebon, Jawa Barat. Kami berkomitmen memberikan pengalaman perencanaan pernikahan yang tenang, menyenangkan, dan berkesan.
+                </p>
+                <p class="text-gray-600 mb-8 leading-relaxed">
+                    Dengan rating sempurna **5,0 Bintang di Google Reviews**, tim kami dikenal sangat detail, komunikatif, dan siap mengeksekusi setiap detail konsep pernikahan—mulai dari Akad Nikah Intimate hingga Resepsi Gedung Megah.
+                </p>
+
+                <!-- Value Props Grid -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8">
+                    <div class="flex gap-4 items-start">
+                        <div class="w-12 h-12 rounded-xl bg-burgundy/10 flex items-center justify-center text-burgundy text-xl shrink-0">
+                            <i class="fa-solid fa-heart"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-800 mb-1">Pelayanan Sepenuh Hati</h4>
+                            <p class="text-xs text-gray-500">Mendengarkan setiap keinginan calon pengantin dengan pendekatan personal.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4 items-start">
+                        <div class="w-12 h-12 rounded-xl bg-burgundy/10 flex items-center justify-center text-burgundy text-xl shrink-0">
+                            <i class="fa-solid fa-list-check"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-800 mb-1">Manajemen Vendor</h4>
+                            <p class="text-xs text-gray-500">Kemitraan luas dengan vendor MUA, Dekorasi, Katering & Dokumentasi terbaik.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Google Rating Badge Card -->
+                <div class="p-4 rounded-xl bg-white border border-roseGold/30 shadow-md flex items-center justify-between">
+                    <div class="flex items-center gap-3">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="Google Logo" class="w-8 h-8">
+                        <div>
+                            <p class="font-bold text-sm text-gray-800">5.0 / 5.0 Rating Google</p>
+                            <p class="text-xs text-gray-500">Berdasarkan ulasan asli pengantin Nayyara WO</p>
+                        </div>
+                    </div>
+                    <a href="https://maps.app.goo.gl/BKUcebtNDhSkCAHG7" target="_blank" class="text-xs text-burgundy font-bold hover:underline">
+                        Lihat Ulasan <i class="fa-solid fa-external-link text-[10px] ml-1"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PACKAGES & SERVICES SECTION -->
+    <section id="layanan" class="py-20 bg-champagne border-y border-roseGold/20 px-4 sm:px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <span class="text-roseGold uppercase tracking-widest font-bold text-sm">Pilihan Paket</span>
+                <h2 class="text-3xl sm:text-5xl font-serif font-bold text-burgundy mt-2">
+                    Paket Pernikahan Pilihan untuk Anda
+                </h2>
+                <p class="text-gray-600 mt-4 text-sm sm:text-base">
+                    Pilih paket sesuai kebutuhan pernikahan Anda atau konsultasikan langsung untuk penyesuaian kustom.
+                </p>
+            </div>
+
+            <!-- Package Cards Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Package 1: Akad Nikah Intimate -->
+                <div class="bg-white rounded-2xl overflow-hidden border border-roseGold/30 shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="relative h-48 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1544078751-58fee2d8a03b?auto=format&fit=crop&w=600&q=80" alt="Akad Nikah Cirebon" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            <div class="absolute top-4 right-4 bg-burgundy text-white text-xs px-3 py-1 rounded-full font-semibold">
+                                Best Choice Intimate
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-2xl font-serif font-bold text-burgundy mb-2">Paket Akad / Intimate Wedding</h3>
+                            <p class="text-gray-500 text-xs mb-4">Cocok untuk acara hangat & sakral hingga 100-150 Tamu.</p>
+                            
+                            <ul class="space-y-2.5 text-sm text-gray-600 mb-6">
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-roseGold text-xs"></i> Tim WO Hari H (4-6 Crew)</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-roseGold text-xs"></i> Pendampingan Konsep & Rundown</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-roseGold text-xs"></i> Dekorasi Akad Nikah Minimalis Elegant</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-roseGold text-xs"></i> Makeup Akad & Busana Pengantin</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-roseGold text-xs"></i> Sound System & MC Akad</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0">
+                        <a href="https://wa.me/628112136333?text=Halo%20Nayyara%20WO,%20saya%20tertarik%20dengan%20Paket%20Akad%20Intimate%20Wedding." target="_blank" class="block w-full text-center bg-burgundy text-white font-semibold py-3 rounded-xl hover:bg-roseGold transition-colors">
+                            Tanyakan Price List & Detail
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Package 2: Grand Ballroom / Gedung -->
+                <div class="bg-white rounded-2xl overflow-hidden border-2 border-roseGold shadow-xl hover:shadow-2xl transition-all duration-300 flex flex-col justify-between relative transform lg:-translate-y-2">
+                    <div class="absolute top-0 right-0 bg-roseGold text-burgundy font-bold text-xs px-4 py-1.5 rounded-bl-xl shadow">
+                        Paling Favorit
+                    </div>
+                    <div>
+                        <div class="relative h-48 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=600&q=80" alt="Resepsi Gedung Cirebon" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-2xl font-serif font-bold text-burgundy mb-2">Paket Grand Ballroom / Gedung</h3>
+                            <p class="text-gray-500 text-xs mb-4">Solusi komplit untuk resepsi megah 300 - 1000+ Tamu.</p>
+                            
+                            <ul class="space-y-2.5 text-sm text-gray-600 mb-6">
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-roseGold text-xs"></i> Full Day Planning & Coordination (8-12 Crew)</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-roseGold text-xs"></i> Dekorasi Pelaminan Modern / Tradisional Premium</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-roseGold text-xs"></i> Full Makeup & Attire Pengantin + Orang Tua</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-roseGold text-xs"></i> Foto & Video High Quality Dokumentasi</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-roseGold text-xs"></i> Konsultasi Vendor Catering & Entertainment</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0">
+                        <a href="https://wa.me/628112136333?text=Halo%20Nayyara%20WO,%20saya%20tertarik%20dengan%20Paket%20Grand%20Ballroom%20Gedung." target="_blank" class="block w-full text-center bg-roseGold text-burgundy font-bold py-3 rounded-xl hover:bg-burgundy hover:text-white transition-colors">
+                            Tanyakan Price List & Detail
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Package 3: Outdoor / Garden Party -->
+                <div class="bg-white rounded-2xl overflow-hidden border border-roseGold/30 shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="relative h-48 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?auto=format&fit=crop&w=600&q=80" alt="Garden Wedding Cirebon" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-2xl font-serif font-bold text-burgundy mb-2">Paket Outdoor & Garden Wedding</h3>
+                            <p class="text-gray-500 text-xs mb-4">Nuansa alam romantis, rustic, dan aesthetic.</p>
+                            
+                            <ul class="space-y-2.5 text-sm text-gray-600 mb-6">
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-roseGold text-xs"></i> Pendampingan Konsep & Lighting System</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-roseGold text-xs"></i> Crew WO khusus pengelolaan Outdoor/Weather Protocol</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-roseGold text-xs"></i> Dekorasi Rustic / Floral Modern Aesthetic</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-roseGold text-xs"></i> MUA Professional & Gown / Suit</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-roseGold text-xs"></i> Full Sound & Live Music Acoustic Setup</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0">
+                        <a href="https://wa.me/628112136333?text=Halo%20Nayyara%20WO,%20saya%20tertarik%20dengan%20Paket%20Outdoor/Garden%20Wedding." target="_blank" class="block w-full text-center bg-burgundy text-white font-semibold py-3 rounded-xl hover:bg-roseGold transition-colors">
+                            Tanyakan Price List & Detail
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- INTERACTIVE BUDGET ESTIMATOR WIDGET -->
+    <section id="kalkulator" class="py-20 px-4 sm:px-8 max-w-5xl mx-auto">
+        <div class="bg-white rounded-3xl p-6 sm:p-10 border border-roseGold/40 shadow-2xl relative overflow-hidden">
+            <div class="absolute -right-12 -bottom-12 w-48 h-48 bg-roseGold/10 rounded-full blur-3xl"></div>
+            
+            <div class="text-center max-w-2xl mx-auto mb-8">
+                <span class="text-roseGold uppercase tracking-widest font-bold text-xs">Fitur Interaktif</span>
+                <h2 class="text-3xl font-serif font-bold text-burgundy mt-1">Simulasi Estimasi Anggaran Pernikahan</h2>
+                <p class="text-xs sm:text-sm text-gray-500 mt-2">Dapatkan perkiraan awal kebutuhan anggaran pernikahan Anda secara instan di Cirebon & sekitarnya.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div class="space-y-5">
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-700 mb-2">Jumlah Undangan (Tamu)</label>
+                        <select id="calc-guests" class="w-full bg-champagne border border-roseGold/30 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-burgundy">
+                            <option value="100">Intimate (100 Tamu / 200 Porsi)</option>
+                            <option value="300" selected>Sedang (300 Tamu / 600 Porsi)</option>
+                            <option value="500">Besar (500 Tamu / 1000 Porsi)</option>
+                            <option value="800">Grand (800+ Tamu / 1600+ Porsi)</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-700 mb-2">Tipe Venue / Konsep Acara</label>
+                        <select id="calc-venue" class="w-full bg-champagne border border-roseGold/30 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-burgundy">
+                            <option value="rumah">Rumah / Halaman Pribadi</option>
+                            <option value="gedung" selected>Gedung / Convention Hall</option>
+                            <option value="hotel">Hotel / Outdoor Resort</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-700 mb-2">Layanan Tambahan</label>
+                        <div class="space-y-2 text-xs sm:text-sm text-gray-600">
+                            <label class="flex items-center gap-2 cursor-pointer">
+                                <input type="checkbox" id="chk-mua" checked class="accent-burgundy rounded">
+                                <span>Rias MUA & Busana Lengkap Pengantin + Keluarga</span>
+                            </label>
+                            <label class="flex items-center gap-2 cursor-pointer">
+                                <input type="checkbox" id="chk-foto" checked class="accent-burgundy rounded">
+                                <span>Dokumentasi Foto & Video Cinematic</span>
+                            </label>
+                            <label class="flex items-center gap-2 cursor-pointer">
+                                <input type="checkbox" id="chk-catering" checked class="accent-burgundy rounded">
+                                <span>Estimasi Katering Lengkap</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Result Box -->
+                <div class="bg-burgundy text-white rounded-2xl p-6 text-center flex flex-col justify-between h-full border border-roseGold">
+                    <div>
+                        <span class="text-xs uppercase text-amber-200 tracking-wider">Perkiraan Estimasi Total</span>
+                        <div id="calc-result" class="text-3xl sm:text-4xl font-serif font-bold text-roseGold my-4">
+                            Rp 45.000.000 - Rp 65.000.000
+                        </div>
+                        <p class="text-xs text-amber-100/70 font-light leading-relaxed">
+                            *Estimasi ini bersifat perkiraan awal (rangkaian lengkap termasuk WO, Dekorasi, MUA, & Katering dasar). Hubungi tim Nayyara WO untuk penyesuaian anggaran yang tepat.
+                        </p>
+                    </div>
+
+                    <a id="calc-wa-btn" href="#" target="_blank" class="mt-6 bg-roseGold text-burgundy font-bold py-3 px-4 rounded-xl hover:bg-white transition-colors text-sm flex items-center justify-center gap-2">
+                        <i class="fa-brands fa-whatsapp text-lg"></i>
+                        <span>Konsultasikan Estimasi Ini via WA</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GALLERY SECTION -->
+    <section id="galeri" class="py-20 bg-champagne border-t border-roseGold/20 px-4 sm:px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center max-w-2xl mx-auto mb-10">
+                <span class="text-roseGold uppercase tracking-widest font-bold text-sm">Portfolio Momen</span>
+                <h2 class="text-3xl sm:text-5xl font-serif font-bold text-burgundy mt-2">
+                    Galeri Kebahagiaan Pengantin Nayyara
+                </h2>
+                <p class="text-gray-600 mt-2 text-sm">Dokumentasi keindahan momen dari berbagai konsep pernikahan yang telah kami bantu wujudkan.</p>
+            </div>
+
+            <!-- Gallery Filter Buttons -->
+            <div class="flex flex-wrap justify-center gap-2 sm:gap-4 mb-10">
+                <button class="gallery-filter-btn active bg-burgundy text-white px-5 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all" data-filter="all">Semua Momen</button>
+                <button class="gallery-filter-btn bg-white border border-roseGold/30 text-gray-700 px-5 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all hover:bg-roseGold hover:text-white" data-filter="akad">Akad Nikah</button>
+                <button class="gallery-filter-btn bg-white border border-roseGold/30 text-gray-700 px-5 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all hover:bg-roseGold hover:text-white" data-filter="dekorasi">Dekorasi</button>
+                <button class="gallery-filter-btn bg-white border border-roseGold/30 text-gray-700 px-5 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all hover:bg-roseGold hover:text-white" data-filter="resepsi">Resepsi</button>
+            </div>
+
+            <!-- Gallery Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <div class="gallery-item akad group relative rounded-2xl overflow-hidden shadow-md h-72">
+                    <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=600&q=80" alt="Akad Nikah Elegant" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-burgundy/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                        <div>
+                            <span class="text-xs text-roseGold font-semibold uppercase">Akad Nikah</span>
+                            <h4 class="text-white font-serif text-xl font-bold">Prosesi Momen Sakral Akad</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item dekorasi group relative rounded-2xl overflow-hidden shadow-md h-72">
+                    <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=600&q=80" alt="Dekorasi Pelaminan Cirebon" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-burgundy/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                        <div>
+                            <span class="text-xs text-roseGold font-semibold uppercase">Dekorasi</span>
+                            <h4 class="text-white font-serif text-xl font-bold">Pelaminan Modern Elegance</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item resepsi group relative rounded-2xl overflow-hidden shadow-md h-72">
+                    <img src="https://images.unsplash.com/photo-1520854221256-17451cc331bf?auto=format&fit=crop&w=600&q=80" alt="Resepsi Gedung Mewah" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-burgundy/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                        <div>
+                            <span class="text-xs text-roseGold font-semibold uppercase">Resepsi</span>
+                            <h4 class="text-white font-serif text-xl font-bold">Selebrasi Resepsi Gedung</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item dekorasi group relative rounded-2xl overflow-hidden shadow-md h-72">
+                    <img src="https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?auto=format&fit=crop&w=600&q=80" alt="Dekorasi Outdoor" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-burgundy/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                        <div>
+                            <span class="text-xs text-roseGold font-semibold uppercase">Dekorasi</span>
+                            <h4 class="text-white font-serif text-xl font-bold">Garden & Outdoor Aesthetic</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item akad group relative rounded-2xl overflow-hidden shadow-md h-72">
+                    <img src="https://images.unsplash.com/photo-1544078751-58fee2d8a03b?auto=format&fit=crop&w=600&q=80" alt="Pernikahan Tradisional" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-burgundy/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                        <div>
+                            <span class="text-xs text-roseGold font-semibold uppercase">Akad Nikah</span>
+                            <h4 class="text-white font-serif text-xl font-bold">Sentuhan Tradisional Jawa / Sunda</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item resepsi group relative rounded-2xl overflow-hidden shadow-md h-72">
+                    <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=600&q=80" alt="Grand Entrance Resepsi" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-burgundy/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                        <div>
+                            <span class="text-xs text-roseGold font-semibold uppercase">Resepsi</span>
+                            <h4 class="text-white font-serif text-xl font-bold">Momen Grand Entrance</h4>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS SECTION -->
+    <section id="testimoni" class="py-20 px-4 sm:px-8 max-w-7xl mx-auto">
+        <div class="text-center max-w-2xl mx-auto mb-12">
+            <span class="text-roseGold uppercase tracking-widest font-bold text-sm">Ulasan Pengantin</span>
+            <h2 class="text-3xl sm:text-5xl font-serif font-bold text-burgundy mt-2">
+                Kata Mereka Tentang Nayyara WO
+            </h2>
+            <div class="flex justify-center items-center gap-2 mt-3">
+                <div class="flex text-amber-500 text-lg">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <span class="font-bold text-gray-800">5.0 / 5.0 di Google Reviews</span>
+            </div>
+        </div>
+
+        <!-- Testimonial Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            
+            <!-- Testi 1 -->
+            <div class="bg-white p-8 rounded-2xl border border-roseGold/20 shadow-lg flex flex-col justify-between relative">
+                <i class="fa-solid fa-quote-right text-4xl text-roseGold/20 absolute top-6 right-6"></i>
+                <div>
+                    <div class="flex text-amber-400 mb-4">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-6 italic">
+                        "Sangat bersyukur pilih Nayyara WO untuk acara di Cirebon kemarin! Timnya gesit banget dari sebelum acara sampai hari H. Pengantin & keluarga tinggal senyum tenang, semua urusan rundown & vendor dihandle rapi!"
+                    </p>
+                </div>
+                <div class="flex items-center gap-3 border-t border-gray-100 pt-4">
+                    <div class="w-10 h-10 rounded-full bg-burgundy/10 text-burgundy font-bold flex items-center justify-center font-serif">
+                        D & A
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-sm text-gray-800">Dina & Andi</h4>
+                        <p class="text-xs text-gray-400">Pernikahan Gedung di Cirebon</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Testi 2 -->
+            <div class="bg-white p-8 rounded-2xl border border-roseGold/20 shadow-lg flex flex-col justify-between relative">
+                <i class="fa-solid fa-quote-right text-4xl text-roseGold/20 absolute top-6 right-6"></i>
+                <div>
+                    <div class="flex text-amber-400 mb-4">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-6 italic">
+                        "Detail-oriented banget. Kakak-kakak Nayyara WO ramah dan solutif waktu ada penyesuaian hiasan & makanan. Rekomended banget buat pasangan yang nggak mau pusing waktu hari nikahan."
+                    </p>
+                </div>
+                <div class="flex items-center gap-3 border-t border-gray-100 pt-4">
+                    <div class="w-10 h-10 rounded-full bg-burgundy/10 text-burgundy font-bold flex items-center justify-center font-serif">
+                        R & F
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-sm text-gray-800">Rina & Fajar</h4>
+                        <p class="text-xs text-gray-400">Akad & Intimate Reception</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Testi 3 -->
+            <div class="bg-white p-8 rounded-2xl border border-roseGold/20 shadow-lg flex flex-col justify-between relative">
+                <i class="fa-solid fa-quote-right text-4xl text-roseGold/20 absolute top-6 right-6"></i>
+                <div>
+                    <div class="flex text-amber-400 mb-4">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-6 italic">
+                        "Tim WO terbaik di Kedawung Cirebon! Komunikasi via WhatsApp lancar, transparan masalah budget, dan sangat membantu koordinasi keluarga besar. Bintang 5 pantas banget!"
+                    </p>
+                </div>
+                <div class="flex items-center gap-3 border-t border-gray-100 pt-4">
+                    <div class="w-10 h-10 rounded-full bg-burgundy/10 text-burgundy font-bold flex items-center justify-center font-serif">
+                        S & M
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-sm text-gray-800">Siti & Mahesa</h4>
+                        <p class="text-xs text-gray-400">Outdoor Garden Wedding</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- CONTACT, BOOKING FORM & GOOGLE MAPS SECTION -->
+    <section id="kontak" class="py-20 bg-champagne border-t border-roseGold/20 px-4 sm:px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                
+                <!-- Left Column: Information & Map Button -->
+                <div>
+                    <span class="text-roseGold uppercase tracking-widest font-bold text-sm">Hubungi & Lokasi</span>
+                    <h2 class="text-3xl sm:text-5xl font-serif font-bold text-burgundy mt-2 mb-6">
+                        Mari Diskusikan Pernikahan Impian Anda
+                    </h2>
+                    <p class="text-gray-600 mb-8 leading-relaxed">
+                        Kantor kami terbuka untuk sesi konsultasi tatap muka maupun diskusi online. Pastikan Anda melakukan registrasi tanggal acara lebih awal untuk mengamankan ketersediaan jadwal tim Nayyara WO.
+                    </p>
+
+                    <!-- Contact Details Card -->
+                    <div class="space-y-6 mb-8">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-burgundy text-roseGold flex items-center justify-center text-xl shrink-0 shadow">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800">Alamat Kantor</h4>
+                                <p class="text-sm text-gray-600 mt-1">
+                                    Perumahan Kedawung Regency 3, Jl. Sultan Ageng Tirtayasa Blok H1, Cempaka, Kec. Kedawung, Kabupaten Cirebon, Jawa Barat 45153
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-burgundy text-roseGold flex items-center justify-center text-xl shrink-0 shadow">
+                                <i class="fa-brands fa-whatsapp"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800">Telepon / WhatsApp</h4>
+                                <p class="text-sm text-gray-600 mt-1">0811-2136-333</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-burgundy text-roseGold flex items-center justify-center text-xl shrink-0 shadow">
+                                <i class="fa-regular fa-clock"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800">Jam Operasional</h4>
+                                <p class="text-sm text-gray-600 mt-1">Buka Setiap Hari (Tutup Pukul 17.00 WIB)</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Direct Google Maps Button Card -->
+                    <div class="p-6 bg-white rounded-2xl border border-roseGold/40 shadow-md flex flex-col sm:flex-row items-center justify-between gap-4">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-full bg-red-100 text-red-600 flex items-center justify-center text-2xl">
+                                <i class="fa-solid fa-map-location-dot"></i>
+                            </div>
+                            <div>
+                                <h5 class="font-bold text-gray-800">Petunjuk Rute Lokasi</h5>
+                                <p class="text-xs text-gray-500">Buka langsung di Google Maps HP Anda</p>
+                            </div>
+                        </div>
+                        <a href="https://maps.app.goo.gl/BKUcebtNDhSkCAHG7" target="_blank" class="w-full sm:w-auto bg-burgundy text-white font-semibold text-xs py-3 px-5 rounded-xl hover:bg-roseGold transition-colors text-center shrink-0">
+                            Buka Google Maps <i class="fa-solid fa-arrow-right ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right Column: Interactive Consultation / Booking Form -->
+                <div class="bg-white p-8 sm:p-10 rounded-3xl border border-roseGold/30 shadow-xl">
+                    <h3 class="text-2xl font-serif font-bold text-burgundy mb-2">Form Konsultasi Tanggal</h3>
+                    <p class="text-xs text-gray-500 mb-6">Isi data singkat berikut untuk langsung terhubung dengan Wedding Consultant kami melalui WhatsApp.</p>
+
+                    <form id="booking-form" class="space-y-4">
+                        <div>
+                            <label class="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-1">Nama Lengkap</label>
+                            <input type="text" id="form-name" required placeholder="Contoh: Anisa & Rizky" class="w-full bg-champagne border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-burgundy">
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-1">Nomor WhatsApp</label>
+                                <input type="tel" id="form-phone" required placeholder="0812xxxx" class="w-full bg-champagne border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-burgundy">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-1">Perkiraan Tanggal</label>
+                                <input type="date" id="form-date" class="w-full bg-champagne border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-burgundy">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-1">Lokasi Rencana Acara</label>
+                            <input type="text" id="form-location" placeholder="Contoh: Gedung Wanita Cirebon / Rumah Kedawung" class="w-full bg-champagne border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-burgundy">
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-1">Catatan / Konsep Keinginan</label>
+                            <textarea id="form-message" rows="3" placeholder="Ceritakan konsep pernikahan impian Anda..." class="w-full bg-champagne border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-burgundy"></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full bg-burgundy text-white font-bold py-4 rounded-xl hover:bg-roseGold transition-colors shadow-lg flex items-center justify-center gap-2">
+                            <i class="fa-brands fa-whatsapp text-xl text-green-400"></i>
+                            <span>Kirim Pesan Booking via WhatsApp</span>
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-darkCharcoal text-white pt-16 pb-8 border-t-4 border-roseGold">
+        <div class="max-w-7xl mx-auto px-4 sm:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+                
+                <div class="md:col-span-2">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 rounded-full bg-burgundy flex items-center justify-center text-roseGold border border-roseGold">
+                            <i class="fa-solid font-serif italic text-xl font-bold">N</i>
+                        </div>
+                        <div>
+                            <span class="block text-2xl font-serif font-bold tracking-wider text-roseGold">NAYYARA</span>
+                            <span class="block text-[9px] uppercase tracking-[0.25em] text-amber-100 font-semibold -mt-1">Wedding Organizer</span>
+                        </div>
+                    </div>
+                    <p class="text-xs text-gray-400 leading-relaxed max-w-sm mb-4">
+                        Jasa Perencana Pernikahan Professional Terpercaya di Cirebon dan Jawa Barat. Berpengalaman mewujudkan momen pernikahan elegan, tenang, dan berkesan.
+                    </p>
+                    <div class="flex space-x-4 text-roseGold">
+                        <a href="https://wa.me/628112136333" target="_blank" class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-roseGold hover:text-burgundy transition-colors"><i class="fa-brands fa-whatsapp"></i></a>
+                        <a href="https://maps.app.goo.gl/BKUcebtNDhSkCAHG7" target="_blank" class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-roseGold hover:text-burgundy transition-colors"><i class="fa-solid fa-map-marker-alt"></i></a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="font-serif font-bold text-roseGold text-lg mb-4">Navigasi Cepat</h4>
+                    <ul class="space-y-2 text-xs text-gray-300">
+                        <li><a href="#beranda" class="hover:text-roseGold">Beranda</a></li>
+                        <li><a href="#tentang" class="hover:text-roseGold">Tentang Kami</a></li>
+                        <li><a href="#layanan" class="hover:text-roseGold">Paket Wedding</a></li>
+                        <li><a href="#kalkulator" class="hover:text-roseGold">Simulasi Budget</a></li>
+                        <li><a href="#galeri" class="hover:text-roseGold">Galeri Portfolio</a></li>
+                        <li><a href="#kontak" class="hover:text-roseGold">Kontak & Lokasi</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-serif font-bold text-roseGold text-lg mb-4">Layanan Cirebon</h4>
+                    <ul class="space-y-2 text-xs text-gray-300">
+                        <li>Akad Nikah Intimate</li>
+                        <li>Resepsi Gedung / Ballroom</li>
+                        <li>Garden & Outdoor Wedding</li>
+                        <li>Custom Wedding Organizer</li>
+                        <li>Day-Of Coordination Hari H</li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="border-t border-white/10 pt-6 text-center text-xs text-gray-500">
+                <p>&copy; <span id="year"></span> Nayyara Wedding Organizer Cirebon. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- FLOATING WHATSAPP BUTTON -->
+    <a href="https://wa.me/628112136333?text=Halo%20Nayyara%20WO,%20saya%20ingin%20konsultasi%20mengenai%20perencanaan%20pernikahan." target="_blank" class="fixed bottom-6 right-6 z-50 bg-green-500 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-2xl hover:bg-green-600 transition-all hover:scale-110 group">
+        <i class="fa-brands fa-whatsapp text-3xl"></i>
+        <!-- Tooltip -->
+        <span class="absolute right-16 bg-burgundy text-white text-xs px-3 py-1.5 rounded-lg whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-md">
+            Chat WhatsApp (0811-2136-333)
+        </span>
+    </a>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // Set dynamic current year in footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Mobile Menu Toggle
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        mobileBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Gallery Filtering Feature
+        const filterBtns = document.querySelectorAll('.gallery-filter-btn');
+        const galleryItems = document.querySelectorAll('.gallery-item');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => {
+                    b.classList.remove('active', 'bg-burgundy', 'text-white');
+                    b.classList.add('bg-white', 'text-gray-700');
+                });
+
+                btn.classList.add('active', 'bg-burgundy', 'text-white');
+                btn.classList.remove('bg-white', 'text-gray-700');
+
+                const filter = btn.getAttribute('data-filter');
+
+                galleryItems.forEach(item => {
+                    if (filter === 'all' || item.classList.contains(filter)) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Interactive Budget Estimator Calculation
+        const guestSelect = document.getElementById('calc-guests');
+        const venueSelect = document.getElementById('calc-venue');
+        const chkMua = document.getElementById('chk-mua');
+        const chkFoto = document.getElementById('chk-foto');
+        const chkCatering = document.getElementById('chk-catering');
+        const calcResult = document.getElementById('calc-result');
+        const calcWaBtn = document.getElementById('calc-wa-btn');
+
+        function updateCalculation() {
+            const guests = parseInt(guestSelect.value);
+            const venue = venueSelect.value;
+            
+            let baseMin = 15000000; // Base WO + Decor
+            let baseMax = 25000000;
+
+            if (venue === 'gedung') {
+                baseMin += 10000000;
+                baseMax += 15000000;
+            } else if (venue === 'hotel') {
+                baseMin += 20000000;
+                baseMax += 30000000;
+            }
+
+            if (chkMua.checked) {
+                baseMin += 5000000;
+                baseMax += 8000000;
+            }
+
+            if (chkFoto.checked) {
+                baseMin += 4000000;
+                baseMax += 7000000;
+            }
+
+            if (chkCatering.checked) {
+                const porsi = guests * 2;
+                baseMin += porsi * 30000;
+                baseMax += porsi * 45000;
+            }
+
+            const minFormatted = new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', maximumFractionDigits: 0 }).format(baseMin);
+            const maxFormatted = new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', maximumFractionDigits: 0 }).format(baseMax);
+
+            calcResult.textContent = `${minFormatted} - ${maxFormatted}`;
+
+            const waText = `Halo Nayyara WO, saya melakukan estimasi di website untuk ${guests} tamu (${venue}). Perkiraan budget: ${minFormatted} - ${maxFormatted}. Boleh konsultasi detailnya?`;
+            calcWaBtn.href = `https://wa.me/628112136333?text=${encodeURIComponent(waText)}`;
+        }
+
+        [guestSelect, venueSelect, chkMua, chkFoto, chkCatering].forEach(element => {
+            element.addEventListener('change', updateCalculation);
+        });
+
+        // Initialize calculation on load
+        updateCalculation();
+
+        // Contact Form to WhatsApp Integration
+        const bookingForm = document.getElementById('booking-form');
+        bookingForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('form-name').value;
+            const phone = document.getElementById('form-phone').value;
+            const date = document.getElementById('form-date').value;
+            const location = document.getElementById('form-location').value;
+            const message = document.getElementById('form-message').value;
+
+            const text = `Halo Nayyara Wedding Organizer,\n\nSaya ingin konsultasi booking jadwal pernikahan:\n- Nama: ${name}\n- No. WA: ${phone}\n- Tanggal Acara: ${date || '-'}\n- Lokasi Rencana: ${location || '-'}\n- Catatan: ${message || '-'}\n\nMohon diinfokan ketersediaan tanggal & price list. Terima kasih!`;
+
+            window.open(`https://wa.me/628112136333?text=${encodeURIComponent(text)}`, '_blank');
+        });
+    </script>
+</body>
+</html>
